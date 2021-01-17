@@ -1,10 +1,15 @@
+body {
+    width: 100vw;
+}
+
 section {
     width: 100vw;
     height: 100vh;
-    background-color: #1a1a1a;
     display: flex;
     flex-direction: column;
     position: relative;
+    background-color: #000;
+    background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
 }
 
 #landingPage {
@@ -12,16 +17,21 @@ section {
 }
 
 #general {
-    background-color: #4158D0;
+    background-color: #000;
     background-image: linear-gradient(135deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    box-shadow: inset 0px 1px 40px 16px rgba(0, 0, 0, 0.36);
 }
 
-.upper,
-.lower {
+.doors {
     width: 100vw;
     height: 50vh;
     background-color: red;
     position: absolute;
+    background-color: #000;
+    background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px;
 }
 
 .upper {
@@ -30,4 +40,34 @@ section {
 
 .lower {
     bottom: 0;
+}
+
+h1 {
+    bottom: 10px;
+}
+
+#testDiv {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: aquamarine;
+    left: 200px;
+    top: 200px;
+}
+
+/*______TYPO______*/
+h1 {
+    font-family: "helvetica", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+
+    background-color: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
+
 }
