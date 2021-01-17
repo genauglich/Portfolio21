@@ -29,7 +29,7 @@ $(document).ready(function () {
     // open Scene
     var openScene = new ScrollMagic.Scene({
             triggerElement: "#general",
-            duration: 500,
+            duration: 100,
         })
         .setTween(openDoors)
         .addIndicators({
@@ -41,10 +41,34 @@ $(document).ready(function () {
 
     /* _________Gneral Main ANIMATION__________ */
 
+    var mainAnimation = new TimelineMax()
+
     // testDiv
-    var test = TweenMax.to("#testDiv", 2, {
+    var test = TweenMax.staggerTo("#testDiv", 2, {
         opacity: "0.1",
-    })
+        top: "300px",
+
+    });
+
+    var closeDoors = new TimelineMax()
+        .add([
+        				TweenMax.staggerTo("#upperGeneral", 2, {
+                top: "0",
+                ease: "power3.out",
+                boxShadow: "0",
+
+
+            }),
+        				TweenMax.staggerTo("#lowerGeneral", 2, {
+                bottom: "0",
+                ease: "power3.out",
+                boxShadow: "0",
+
+            })
+        			]);
+
+
+    mainAnimation.add(test).add(closeDoors);
 
     //General Animation
 
@@ -53,7 +77,7 @@ $(document).ready(function () {
             duration: 1000,
         })
         .setPin("#general")
-        .setTween(test)
+        .setTween(mainAnimation)
         .addIndicators({
             name: "generalAnimation"
         }) // add indicators (requires plugin)
@@ -64,36 +88,35 @@ $(document).ready(function () {
 
     //General close Dors
 
-    var closeDoors = new TimelineMax()
-        .add([
-				TweenMax.to("#upperGeneral", 2, {
-                top: "0",
-                ease: "power3.out",
-                boxShadow: "0",
-
-
-            }),
-				TweenMax.to("#lowerGeneral", 2, {
-                bottom: "0",
-                ease: "power3.out",
-                boxShadow: "0",
-
-            })
-			]);
-
-
-    // open Scene
-    var closeDoors = new ScrollMagic.Scene({
-            triggerElement: "#general",
-            duration: 300,
-        })
-        .setTween(openDoors)
-        .addIndicators({
-            name: "closeDoors"
-        }) // add indicators (requires plugin)
-        .triggerHook(0.5)
-        .addTo(controller);
-
+    //        var closeDoors = new TimelineMax()
+    //            .add([
+    //        				TweenMax.to("#upperGeneral", 2, {
+    //                    top: "0",
+    //                    ease: "power3.out",
+    //                    boxShadow: "0",
+    //    
+    //    
+    //                }),
+    //        				TweenMax.to("#lowerGeneral", 2, {
+    //                    bottom: "0",
+    //                    ease: "power3.out",
+    //                    boxShadow: "0",
+    //    
+    //                })
+    //        			]);
+    //
+    //    // close Scene
+    //    var closeDoors = new ScrollMagic.Scene({
+    //            triggerElement: "#general",
+    //            duration: 300,
+    //        })
+    //        .setTween(closeDoors)
+    //        .addIndicators({
+    //            name: "closeDoors"
+    //        }) // add indicators (requires plugin)
+    //        .triggerHook(-0.2)
+    //        .offset(100)
+    //        .addTo(controller);
 
 
 
