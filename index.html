@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio genauglich</title>
-    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/resetCss.css">
+    <link rel="stylesheet" href="style/style.css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
@@ -18,12 +18,21 @@
 
 <body>
 
-    <section id="LandingPage"></section>
+    <section id="landingPage">
+        <object data="img/ggLogo.svg" type="image/svg+xml">
+            <!-- Für Browser ohne SVG-Unterstützung -->
+            <img src="img/ggLogo.svg" width="600" height="193" alt="Logo genauglich">
+        </object>
+        <button>About me</button>
+        <button>About my Projects</button>
+    </section>
+    <section id="general">
+        <div class="upper" id="upperGeneral"></div>
+        <div class="lower"></div>
+    </section>
     <section id="ProjectOne"></section>
     <section id="ProjectTwo"></section>
 
 
-    <script src=""></script>
-</body>
-
-</html>
+    <script src="js/animate.js"></script>
+</body></html>
