@@ -25,21 +25,19 @@ $(document).ready(function () {
             })
 			]);
 
-    var msg = TweenMax.fromTo("#general h2", 1, {
-        top: 10,
-        left: 370,
-        rotation: 20
+    var msgIn = TweenMax.fromTo("#general h2", 1, {
+        opacity: 0,
     }, {
-        top: 100,
-        rotation: -20
+        opacity: 1,
     });
 
-    //    mainAnimation.add(msg);
-    new ScrollMagic.Scene({
-            duration: 300,
-            offset: 200
-        }).setTween(msg)
-        .addTo(controller);
+    var msgOut = TweenMax.to("#general h2", 6, {
+        opacity: 0,
+        delay: 5
+    });
+
+    mainAnimation.add(msgIn).add(msgOut);
+
     // open Scene
     var openScene = new ScrollMagic.Scene({
             triggerElement: "#general",
