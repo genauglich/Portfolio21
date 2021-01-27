@@ -25,18 +25,44 @@ $(document).ready(function () {
             })
 			]);
 
-    var msgIn = TweenMax.fromTo("#general h2", 1, {
+    var msgIn = TweenMax.fromTo("#allesGG", 1, {
         opacity: 0,
     }, {
         opacity: 1,
     });
 
-    var msgOut = TweenMax.to("#general h2", 6, {
+    var msgOut = TweenMax.to("#allesGG", 6, {
         opacity: 0,
         delay: 5
     });
 
-    mainAnimation.add(msgIn).add(msgOut);
+    //________String to Aray_________
+    var str = "  This is an amazing sentence.";
+    var words = str.split(" ");
+    //    console.log(words);    //["This", "is", "an", "amazing", "sentence."]
+    var obj = {
+        curWord: 0
+    };
+
+    // create tween
+    var msgSecuence = TweenMax.to(obj, 100, {
+        curWord: words.length - 1, // animate propery curWord to number of images
+        roundProps: "curWord", // only integers so it can be used as an array index
+        repeat: 0, // repeat 3 times
+        immediateRender: true, // load first image automatically
+        ease: Linear.easeNone, // show every image the same ammount of time
+        onUpdate: function () {
+            $("#actualWord").text(words[obj.curWord]); // set the image source
+            console.log("onUpdate");
+
+        }
+    });
+
+
+
+    //________________________________________________
+
+    mainAnimation.add(msgIn).add(msgOut).add(msgSecuence);
 
     // open Scene
     var openScene = new ScrollMagic.Scene({
@@ -52,7 +78,10 @@ $(document).ready(function () {
         .addTo(controller);
 
 
-
+    // handle form change
+    $("form.move input[name=duration]:radio").change(function () {
+        openScene.duration($(this).val());
+    });
 
 });
 

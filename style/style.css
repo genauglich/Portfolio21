@@ -73,6 +73,8 @@ section h2 {
     color: black;
     z-index: 4;
     top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     text-align: center;
 
 }
