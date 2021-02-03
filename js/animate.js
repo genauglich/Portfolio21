@@ -166,19 +166,36 @@ $(document).ready(function () {
             TweenMax.to("#KKschrift", 0.5, {
                 delay: 2,
                 opacity: 1,
-
+                transform: "sclae(1.5)",
 
             })
 
 
 			]);
+    var popKK = new TweenMax.to("#ProjectOne svg", 1, {
+        transform: "scale(10)",
+        ease: Power3.easeOut,
+        y: -500,
+        opacity: "0",
+    })
 
+    var mainText = TweenMax.fromTo("#ProjectOne p", 1, {
+        opacity: 0,
+    }, {
+        opacity: 1,
+    });
 
+    var slider = TweenMax.to("#imgKK", 5, {
+        left: "-1050vw",
+
+    });
+
+    mainAnimation.add(popKK).add(mainText).add(slider);
 
     // Project One Scene
     var generalScene = new ScrollMagic.Scene({
             triggerElement: "#ProjectOne",
-            duration: 10000,
+            duration: 8000,
         })
         .setTween(mainAnimation)
         .setPin("#ProjectOne")

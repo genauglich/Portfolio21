@@ -24,8 +24,6 @@ section {
     */
 }
 
-
-
 #landingPage {
     padding: 30% 0px;
 }
@@ -38,6 +36,21 @@ section {
 #ProjectOne {
     background-color: #FFF502;
     box-shadow: inset 0px 1px 40px 16px rgba(0, 0, 0, 0.36);
+    color: #53007A;
+    overflow: hidden;
+}
+
+#imgKK {
+    position: absolute;
+    left: 100vw;
+    height: 100vh;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+}
+
+#imgKK img {
+    height: 100%;
 }
 
 
