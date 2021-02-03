@@ -121,8 +121,8 @@ $(document).ready(function () {
 
     mainAnimation.add(msgIn).add(msgOut).add(msgSecuence).add(invert).add(mainText).add(reverse).add(closeDoors);
 
-    // open Scene
-    var openScene = new ScrollMagic.Scene({
+    // General Scene
+    var generalScene = new ScrollMagic.Scene({
             triggerElement: "#general",
             duration: 10000,
         })
@@ -134,51 +134,62 @@ $(document).ready(function () {
         .triggerHook(0)
         .addTo(controller);
 
+    //End General ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-    // handle form change
-    $("form.move input[name=duration]:radio").change(function () {
-        openScene.duration($(this).val());
-    });
+    // Project One________________________________________________________________________________________________________________________________
+
+    var mainAnimation = new TimelineMax()
+        .add([
+				TweenMax.to("#upperPone", 2, {
+                top: "-38%",
+                ease: "power3.out",
+                boxShadow: "0px 1px 40px 16px rgba(0,0,0,0.36)",
+
+
+            }),
+				TweenMax.to("#lowerPone", 2, {
+                bottom: "-40%",
+                ease: "power3.out",
+                boxShadow: "0px 1px 40px 16px rgba(0,0,0,0.36)",
+
+
+            }),
+
+                TweenMax.fromTo("#KKpath", 2, {
+                strokeDashoffset: "2106",
+
+            }, {
+                strokeDashoffset: "0",
+                delay: 0.2,
+            }),
+
+            TweenMax.to("#KKschrift", 0.5, {
+                delay: 2,
+                opacity: 1,
+
+
+            })
+
+
+			]);
+
+
+
+    // Project One Scene
+    var generalScene = new ScrollMagic.Scene({
+            triggerElement: "#ProjectOne",
+            duration: 10000,
+        })
+        .setTween(mainAnimation)
+        .setPin("#ProjectOne")
+        .addIndicators({
+            name: "mainAnimation"
+        }) // add indicators (requires plugin)
+        .triggerHook(0)
+        .addTo(controller);
+
 
 });
 
-///* _________Gneral Main ANIMATION__________ */
-//
-//var mainAnimation = new TimelineMax()
-//
-//
-//});
-//
-//var closeDoors = new TimelineMax()
-//    .add([
-//        				TweenMax.staggerTo("#upperGeneral", 2, {
-//                top: "0",
-//                ease: "power3.out",
-//                boxShadow: "0",
-//
-//
-//            }),
-//        				TweenMax.staggerTo("#lowerGeneral", 2, {
-//                bottom: "0",
-//                ease: "power3.out",
-//                boxShadow: "0",
-//
-//            })
-//
-//
-//
-//mainAnimation.add(closeDoors);
-//
-////General Animation
-//
-//var generalAnimation = new ScrollMagic.Scene({
-//                    triggerElement: "#general",
-//                    duration: 1000,
-//                })
-//                .setPin("#general")
-//                .setTween(mainAnimation)
-//                .addIndicators({
-//                    name: "generalAnimation"
-//                }) // add indicators (requires plugin)
-//                .triggerHook(0)
-//                .addTo(controller);
+
+//End Project one ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________

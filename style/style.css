@@ -35,6 +35,12 @@ section {
     box-shadow: inset 0px 1px 40px 16px rgba(0, 0, 0, 0.36);
 }
 
+#ProjectOne {
+    background-color: #FFF502;
+    box-shadow: inset 0px 1px 40px 16px rgba(0, 0, 0, 0.36);
+}
+
+
 .doors {
     width: 100vw;
     height: 50vh;
@@ -60,6 +66,16 @@ h1 {
 }
 
 
+#ProjectOne svg {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#KKschrift {
+    opacity: 0;
+}
 
 /*______TYPO______*/
 h1 {
