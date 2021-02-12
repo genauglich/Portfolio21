@@ -20,6 +20,8 @@ section {
     flex-direction: column;
     align-items: center;
     position: relative;
+    box-shadow: inset 0px 1px 40px 16px rgba(0, 0, 0, 0.36);
+
     /*    background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
     */
 }
@@ -30,15 +32,20 @@ section {
 
 #general {
     background-color: #fff;
-    box-shadow: inset 0px 1px 40px 16px rgba(0, 0, 0, 0.36);
 }
 
 #ProjectOne {
     background-color: #FFF502;
-    box-shadow: inset 0px 1px 40px 16px rgba(0, 0, 0, 0.36);
     color: #53007A;
     overflow: hidden;
 }
+
+#ProjectTwo {
+    background-color: #00475C;
+    color: #ffffff;
+    overflow: hidden;
+}
+
 
 #imgKK {
     position: absolute;
@@ -53,6 +60,9 @@ section {
     height: 100%;
 }
 
+.absolute {
+    position: absolute;
+}
 
 .doors {
     width: 100vw;
@@ -88,6 +98,13 @@ h1 {
 
 #KKschrift {
     opacity: 0;
+}
+
+#tramOpen {
+    position: absolute;
+    transform: scale(1.8);
+    top: -87.3%;
+    left: -120%;
 }
 
 /*______TYPO______*/
