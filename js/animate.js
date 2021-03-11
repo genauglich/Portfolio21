@@ -190,7 +190,29 @@ $(document).ready(function () {
 
     });
 
-    mainAnimation.add(popKK).add(mainText).add(slider);
+    var closeDoors = new TimelineMax()
+        .add([
+        				TweenMax.staggerTo("#upperPone", 2, {
+                top: "0",
+                ease: "power3.out",
+                boxShadow: "0",
+                delay: 5,
+
+
+
+            }),
+        				TweenMax.staggerTo("#lowerPone", 2, {
+                bottom: "0",
+                ease: "power3.out",
+                boxShadow: "0",
+                delay: 5,
+
+
+            })
+]);
+
+
+    mainAnimation.add(popKK).add(mainText).add(slider).add(closeDoors);
 
     // Project One Scene
     var generalScene = new ScrollMagic.Scene({
@@ -232,6 +254,84 @@ $(document).ready(function () {
                 delay: 0.3,
             })
 			]);
+
+
+
+    var trampath = {
+
+        curviness: 1.5,
+        autoRotate: true,
+        values: [
+            {
+                x: -100,
+                y: 300,
+            },
+            {
+                x: 40,
+                y: 400,
+            },
+            {
+                x: 70,
+                y: 170,
+            },
+            {
+                x: -60,
+                y: 170,
+            },
+            {
+                x: 10,
+                y: 470,
+            },
+
+
+            {
+                x: 370,
+                y: window.innerHeight,
+            }
+
+
+        ]
+
+    };
+
+
+
+
+    var tramtween = new TimelineMax()
+        .add([
+				TweenMax.to("#ProjectTwoText", 1, {
+                opacity: "1",
+            }),
+            TweenMax.to($("#tramTop"), 1.2, {
+                bezier: trampath,
+                ease: Power1.easeInOut
+            })
+
+			]);
+
+    var closeDoors = new TimelineMax()
+        .add([
+        				TweenMax.staggerTo("#upperPtwo", 2, {
+                top: "0",
+                ease: "power3.out",
+                boxShadow: "0",
+                delay: 5,
+
+            }),
+        				TweenMax.staggerTo("#lowerPtwo", 2, {
+                bottom: "0",
+                ease: "power3.out",
+                boxShadow: "0",
+                delay: 5,
+
+            })
+]);
+
+
+
+
+    mainAnimation.add(tramtween).add(closeDoors);
+
 
     // Project Two Scene
     var generalScene = new ScrollMagic.Scene({

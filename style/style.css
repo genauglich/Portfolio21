@@ -107,6 +107,24 @@ h1 {
     left: -120%;
 }
 
+
+#tramTop {
+    width: 5%;
+    left: 50vw;
+    top: -10vh;
+    transform: scale(2);
+}
+
+#tramTop img {
+    transform: rotate(-87deg);
+
+}
+
+#ProjectTwoText {
+    opacity: 0;
+}
+
+
 /*______TYPO______*/
 h1 {
     font-family: 'Lato', sans-serif;
